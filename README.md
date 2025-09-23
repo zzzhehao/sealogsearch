@@ -85,4 +85,4 @@ Default search fields are "event_value", "event_free_text", "event_option.commen
 
 ### Deployment
 
-You can simply run the shiny app locally by sourcing the script `app.R`, or you can deploy the app on an online host. 
+You can simply run the shiny app locally by sourcing the script `app.R`, or you can deploy the app on an online host, see [this guide](https://shiny.posit.co/r/deploy.html). If you have a shinyapp.io account, you can deploy the app using `rsconnect::deployApp()`. 

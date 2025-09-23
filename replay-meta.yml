@@ -1,0 +1,527 @@
+# FKt250220 Ocean Census GoSouth South Sandwich Islands
+- S0798P1:
+  dive: 798
+  part: 1
+  start_UTC: 2025-03-02 07:32:58
+  length: 02:24:35
+  url: https://youtu.be/vUyaDVyA6Hw
+- S0798P2:
+  dive: 798
+  part: 2
+  start_UTC: 2025-03-02 10:59:07
+  length: 02:09:10
+  url: https://youtu.be/6HSBtPXBwuE
+- S0798P3:
+  dive: 798
+  part: 3
+  start_UTC: 2025-03-02 13:32:02
+  length: 11:54:58
+  url: https://youtu.be/tMu7-iVuwb0
+- S0798P4:
+  dive: 798
+  part: 4
+  start_UTC: 2025-03-03 01:36:14
+  length: 00:38:55
+  url: https://youtu.be/PcGR4MO4gBo
+- S0799P1:
+  dive: 799
+  part: 1
+  start_UTC: 2025-03-04 09:12:06
+  length: 07:24:19
+  url: https://youtu.be/FaqIL4nHUEs
+- S0799P2:
+  dive: 799
+  part: 2
+  start_UTC: 2025-03-04 17:53:28
+  length: 04:52:56
+  url: https://youtu.be/6cDuAgnAUmg
+- S0800P1:
+  dive: 800
+  part: 1
+  start_UTC: 2025-03-05 04:19:32
+  length: 07:28:31
+  url: https://youtu.be/co05geNeR0M
+- S0800P2:
+  dive: 800
+  part: 2
+  start_UTC: 2025-03-05 11:48:08
+  length: 08:02:56
+  url: https://youtu.be/rMfOl_x7ltY
+- S0800P3:
+  dive: 800
+  part: 3
+  start_UTC: 2025-03-05 19:51:43
+  length: 05:21:19
+  url: https://youtu.be/SSEhfbmi6LA
+- S0801P1:
+  dive: 801
+  part: 1
+  start_UTC: 2025-03-08 02:07:22
+  length: 02:05:35
+  url: https://youtu.be/3a_qKIyvGW0
+- S0801P2:
+  dive: 801
+  part: 2
+  start_UTC: 2025-03-08 04:37:53
+  length: 00:06:00
+  url: https://youtu.be/D2ysQBiG7tU
+- S0801P3:
+  dive: 801
+  part: 3
+  length: 10:08:38
+  start_UTC: 2025-03-08 05:00:08
+  url: https://youtu.be/flHYERGOuXw
+- S0802P1:
+  dive: 802
+  part: 1
+  start_UTC: 2025-03-09 03:08:57
+  length: 07:27:13
+  url: https://youtu.be/zNjcUAcWC7E
+- S0802P2:
+  dive: 802
+  part: 2
+  start_UTC: 2025-03-09 10:40:13
+  length: 03:35:50
+  url: https://youtu.be/2uHCGflhefM
+- S0802P3:
+  dive: 802
+  part: 3
+  start_UTC: 2025-03-09 14:34:55
+  length: 00:54:12
+  url: https://youtu.be/q2wk1deb_VQ
+- S0803P1:
+  dive: 803
+  part: 1
+  start_UTC: 2025-03-09 20:36:08
+  length: 00:39:15
+  url: https://youtu.be/2vF1-MhQ-0s
+- S0803P2:
+  dive: 803
+  part: 2
+  start_UTC: 2025-03-09 22:32:18
+  length: 01:00:10
+  url: https://youtu.be/WpGdMfEHQZI
+- S0803P3:
+  dive: 803
+  part: 3
+  start_UTC: 2025-03-10 00:01:28
+  length: 07:33:05
+  url: https://youtu.be/ZlBHLyZ2UUc
+- S0803P4:
+  dive: 803
+  part: 4
+  start_UTC: 2025-03-10 07:39:53
+  length: 07:29:03
+  url: https://youtu.be/D8db6yhZg44
+- S0803P5:
+  dive: 803
+  part: 5
+  start_UTC: 2025-03-10 15:16:16
+  length: 05:55:49
+  url: https://youtu.be/TU5qpsyIdQs
+- S0804P1:
+  dive: 804
+  part: 1
+  start_UTC: 2025-03-15 03:31:28
+  length: 10:11:35
+  url: https://youtu.be/4rVOaavTrOg
+- S0804P2:
+  dive: 804
+  part: 2
+  start_UTC: 2025-03-15 14:22:59
+  length: 07:37:55
+  url: https://youtu.be/920ITxJEzWg
+- S0804P3:
+  dive: 804
+  part: 3
+  start_UTC: 2025-03-15 22:00:40
+  length: 03:25:30
+  url: https://youtu.be/3O2pJZBCE0c
+- S0805P1:
+  dive: 805
+  part: 1
+  start_UTC: 2025-03-19 12:07:33
+  length: 07:24:43
+  url: https://youtu.be/Q1xAlQO8k6w
+- S0805P2:
+  dive: 805
+  part: 2
+  start_UTC: 2025-03-19 19:36:44
+  length: 07:18:14
+  url: https://youtu.be/gRICHtohCGs
+- S0805P3:
+  dive: 805
+  part: 3
+  start_UTC: 2025-03-20 02:55:04
+  length: 08:51:35
+  url: https://youtu.be/4alvmLueLQE
+
+# Bellinghausen
+- S0775P1:
+  dive: 775
+  part: 1
+  start_UTC: 2025-01-18 14:45:53
+  length: 02:26:57
+  url: https://youtu.be/m9ur6MAF9YY
+- S0776P1:
+  dive: 776
+  part: 1
+  start_UTC: 2025-01-19 12:08L56
+  length: 05:52:57
+  url: https://youtu.be/-26U0XjNRuE
+- S0777P1:
+  dive: 777
+  part: 1
+  start_UTC: 2025-01-19 22:49:08
+  length: 05:23:53
+  url: https://youtu.be/GKtQHLLJ0kA
+- S0778P1:
+  dive: 778
+  part: 1
+  start_UTC: 2025-01-21 10:22:53
+  length: 07:26:19
+  url: https://youtu.be/DcQYeCg_JQM
+- S0779P1:
+  dive: 779
+  part: 1
+  start_UTC: 2025-01-22 11:09:30
+  length: 04:53:56
+  url: https://youtu.be/fz8lBmeTqI0
+- S0780P1:
+  dive: 780
+  part: 1
+  start_UTC: 2025-01-23 18:53:12
+  length: 07:58:20
+  url: https://youtu.be/8l9FuQKh8To
+- S0780P2:
+  dive: 780
+  part: 2
+  start_UTC: 2025-01-24 02:52:48
+  length: 04:28:43
+  url: https://youtu.be/otG3TD5SG5c
+- S0781P1:
+  dive: 781
+  part: 1
+  start_UTC: 2025-01-24 14:08:42
+  length: 03:04:08
+  url: https://youtu.be/TXaQ2Mio8Q8
+- S0782P1:
+  dive: 782
+  part: 1
+  start_UTC: 2025-01-26 07:24:52
+  length: 08:13:57
+  url: https://youtu.be/yJhaXkJmY7E
+- S0782P2:
+  dive: 782
+  part: 2
+  start_UTC: 2025-01-26 15:42:52
+  length: 07:47:13
+  url: https://youtu.be/JSnAB64xzVk
+- S0783P1:
+  dive: 783
+  part: 1
+  start_UTC: 2025-01-27 10:15:48
+  length: 07:31:23
+  url: https://youtu.be/sbOSp2liXgw
+- S0783P2:
+  dive: 783
+  part: 2
+  start_UTC: 2025-01-27 18:33:42
+  length: 04:11:10
+  url: https://youtu.be/Kv_gJXy1ppc
+- S0784P1:
+  dive: 784
+  part: 1
+  start_UTC: 2025-01-28 02:43:32
+  length: 08:08:37
+  url: https://youtu.be/NNMWNrSKs3Y
+- S0784P2:
+  dive: 784
+  part: 2
+  start_UTC: 2025-01-28 10:59:57
+  length: 04:04:10
+  url: https://youtu.be/1GVJJCSIsjQ
+- S0785P1:
+  dive: 785
+  part: 1
+  start_UTC: 2025-01-28 22:30:09
+  length: 08:14:29
+  url: https://youtu.be/xxH_3hn7Muc
+- S0785P2:
+  dive: 785
+  part: 2
+  start_UTC: 2025-01-29 06:30:30
+  length: 02:16:54
+  url: https://youtu.be/Qr2pvXMoUZs
+- S0786P1:
+  dive: 786
+  part: 1
+  start_UTC: 2025-01-29 12:59:52
+  length: 08:03:39
+  url: https://youtu.be/G7katAhKjqw
+- S0786P2:
+  dive: 786
+  part: 2
+  start_UTC: 2025-01-29 21:07:33
+  length: 02:27:19
+  url: https://youtu.be/u9gC2G6Xqt0
+- S0788P1:
+  dive: 788
+  part: 1
+  start_UTC: 2025-01-31 08:14:06
+  length: 08:07:54
+  url: https://youtu.be/LVfVsBJRqSw
+- S0788P2:
+  dive: 788
+  part: 2
+  start_UTC: 2025-01-31 16:23:06
+  length: 05:41:09
+  url: https://youtu.be/uIWgmvqvIOA
+- S0790P1:
+  dive: 790
+  part: 1
+  start_UTC: 2025-02-01 05:52:07
+  length: 08:14:18
+  url: https://youtu.be/asMEdj0Limw
+- S0790P2:
+  dive: 790
+  part: 2
+  start_UTC: 2025-02-01 14:09:58
+  length: 05:57:58
+  url: https://youtu.be/GoKx8apbGH8
+- S0793P1:
+  dive: 793
+  part: 1
+  start_UTC: 2025-02-04 14:36:06
+  length: 07:55:25
+  url: https://youtu.be/9UVueOL1ozY
+- S0793P2:
+  dive: 793
+  part: 2
+  start_UTC: 2025-02-04 22:31:48
+  length: 04:30:17
+  url: https://youtu.be/v8vEm1_GcCQ
+- S0794P1:
+  dive: 794
+  part: 1
+  start_UTC: 2025-02-05 13:15:51
+  length: 07:45:54
+  url: https://youtu.be/DgVe4KRZuQM
+- S0794P2:
+  dive: 794
+  part: 2
+  start_UTC: 2025-02-05 21:00:23
+  length: 05:34:25
+  url: https://youtu.be/KUr5B14sqHA
+- S0796P1:
+  dive: 796
+  part: 1
+  start_UTC: 2025-02-06 10:36:09
+  length: 09:39:36
+  url: https://youtu.be/pJRlGNp7ZbQ
+
+# Mar del Plata Submarine Canyon
+- S0809P1:
+  dive: 809
+  part: 1
+  start_UTC: 2025-07-25 00:28:29
+  length: 03:24:02
+  url: https://youtu.be/oqvkOMr4P0Y
+- S0810P1:
+  dive: 810
+  part: 1
+  start_UTC: 2025-07-25 10:16:14
+  length: 06:15:05
+  url: https://youtu.be/p68Z7e_zEJI
+- S0811P1:
+  dive: 811
+  part: 1
+  start_UTC: 2025-07-26 02:49:49
+  length: 05:18:31
+  url: https://youtu.be/yeljPx_Mw-M
+- S0812P1:
+  dive: 812
+  part: 1
+  start_UTC: 2025-07-26 14:28:04
+  length: 07:44:45
+  url: https://youtu.be/w4XPAlruDfw
+- S0813P1:
+  dive: 813
+  part: 1
+  start_UTC: 2025-07-27 14:35:48
+  length: 04:56:12
+  url: https://youtu.be/eth3iGZGqWk
+- S0814P1:
+  dive: 814
+  part: 1
+  start_UTC: 2025-07-28 00:50:59
+  length: 07:04:10
+  url: https://youtu.be/14O-6nAVzR8
+- S0814P2:
+  dive: 814
+  part: 2
+  start_UTC: 2025-07-28 07:55:08
+  length: 07:01:40
+  url: https://youtu.be/qt22uyRZqnM
+- S0815P1:
+  dive: 815
+  part: 1
+  start_UTC: 2025-07-28 20:41:18
+  length: 07:20:58
+  url: https://youtu.be/xwhBVU6IzEo
+- S0815P2:
+  dive: 815
+  part: 2
+  start_UTC: 2025-07-29 04:02:09
+  length: 00:58:10
+  url: https://youtu.be/NSYgLOUGQGk
+- S0816P1:
+  dive: 816
+  part: 1
+  start_UTC: 2025-07-29 14:18:09
+  length: 08:41:40
+  url: https://youtu.be/bbE8Hw9ClC0
+- S0816P2:
+  dive: 816
+  part: 2
+  start_UTC: 2025-07-29 23:04:23
+  length: 09:19:48
+  url: https://youtu.be/wPeAwx1pUKU
+- S0817P1:
+  dive: 817
+  part: 1
+  start_UTC: 2025-07-30 14:07:48
+  length: 09:44:12
+  url: https://youtu.be/xg9NLXK8zqI
+- S0817P2:
+  dive: 817
+  part: 2
+  start_UTC: 2025-07-30 23:57:22
+  length: 08:26:19
+  url: https://youtu.be/hrO-DjvVTiI
+- S0818P1:
+  dive: 818
+  part: 1
+  start_UTC: 2025-07-31 14:25:23
+  length: 07:48:45
+  url: https://youtu.be/obR19hmU7Hw
+- S0818P2:
+  dive: 818
+  part: 2
+  start_UTC: 2025-07-31 22:33:14
+  length: 11:54:55
+  url: https://youtu.be/Fa-iwwxiDr0
+- S0819P1:
+  dive: 819
+  part: 1
+  start_UTC: 2025-08-01 17:08:03
+  length: 08:10:42
+  url: https://youtu.be/FJNJJ8L8Vwo
+- S0819P2:
+  dive: 819
+  part: 2
+  start_UTC: 2025-08-02 01:18:38
+  length: 10:56:53
+  url: https://youtu.be/kAxqt4UqdLo
+- S0819P3:
+  dive: 819
+  part: 3
+  start_UTC: 2025-08-02 12:15:23
+  length: 10:05:05
+  url: https://youtu.be/oAanpXjQpN8
+- S0820P1:
+  dive: 820
+  part: 1
+  start_UTC: 2025-08-04 12:20:37
+  length: 07:53:16
+  url: https://youtu.be/lcM82Srz8TE
+- S0820P2:
+  dive: 820
+  part: 2
+  start_UTC: 2025-08-04 20:13:43
+  length: 08:54:59
+  url: https://youtu.be/8uL0zE_KwHs
+- S0820P3:
+  dive: 820
+  part: 3
+  start_UTC: 2025-08-05 05:09:09
+  length: 06:33:07
+  url: https://youtu.be/sJJ1VCiQnqw
+- S0821P1:
+  dive: 821
+  part: 1
+  start_UTC: 2025-08-05 18:35:23
+  length: 07:47:56
+  url: https://youtu.be/3OEvDvoFGMQ
+- S0821P2:
+  dive: 821
+  part: 2
+  start_UTC: 2025-08-06 02:23:08
+  length: 02:02:50
+  url: https://youtu.be/hVc5bTguGyc
+- S0822P1:
+  dive: 822
+  part: 1
+  start_UTC: 2025-08-06 21:06:52
+  length: 08:13:24
+  url: https://youtu.be/bGFwAaBRA6E
+- S0822P2:
+  dive: 822
+  part: 2
+  start_UTC: 2025-08-07 05:20:18
+  length: 08:59:35
+  url: https://youtu.be/wPZOIMsf2bI
+- S0822P3:
+  dive: 822
+  part: 3
+  start_UTC: 2025-08-07 14:20:08
+  length: 04:46:35
+  url: https://youtu.be/buyN-sbcYWU
+- S0823P1:
+  dive: 823
+  part: 1
+  start_UTC: 2025-08-07 23:53:53
+  length: 09:22:15
+  url: https://youtu.be/DBhPSqv0x20
+- S0823P2:
+  dive: 823
+  part: 2
+  start_UTC: 2025-08-08 09:29:48
+  length: 08:07:53
+  url: https://youtu.be/tlTZ5N-5-8M
+- S0825P1:
+  dive: 825
+  part: 1
+  start_UTC: 2025-08-09 02:58:58
+  length: 08:44:20
+  url: https://youtu.be/ViB0Vm4wxqU
+- S0825P2:
+  dive: 825
+  part: 2
+  start_UTC: 2025-08-09 11:43:18
+  length: 09:30:50
+  url: https://youtu.be/ttYmwfVzjcE
+- S0825P3:
+  dive: 825
+  part: 3
+  start_UTC: 2025-08-09 21:14:08
+  length: 02:48:10
+  url: https://youtu.be/VucMm4XsURE
+- S0826P1:
+  dive: 826
+  part: 1
+  start_UTC: 2025-08-10 04:41:23
+  length: 08:12:15
+  url: https://youtu.be/mVDHg4IMvY4
+- S0826P2:
+  dive: 826
+  part: 2
+  start_UTC: 2025-08-10 12:53:37
+  length: 07:21:10
+  url: https://youtu.be/Q04nFJduazI
+# - S0:
+#   dive: 
+#   part: 
+#   start_UTC: 
+#   length: 
+#   url: 

@@ -118,13 +118,13 @@ server <- function(input, output, session) {
     })
 
     # Do search
-    search_res <- eventReactive(input$search, {
-    # search_res <- reactive({
+    # search_res <- eventReactive(input$search, {
+    search_res <- reactive({
         start.time <- Sys.time()
         if (length(dive_cruise_conifg()$error) == 0) {
             searchText <- input$searchText
             user.option <- search_option()
-            search_res.tbl <- searchSealog(
+            search_res.obj <- searchSealog(
                 searchText,
                 ambiguity.threshold = user.option$threshold,
                 searchRange.cruise = user.option$cruise.range,
@@ -133,37 +133,59 @@ server <- function(input, output, session) {
                 exact = user.option$exact,
                 case_sensitive = user.option$case_sensitive
             ) 
-            hasHit <- length(search_res.tbl)==0
-            search_res.tbl.url <- search_res.tbl %>% 
-                searchres_youtube("replay-meta.yml")
-            search_res.tbl.display <- searchres_formatter(search_res.tbl.url)
-            end.time <- Sys.time()
-            runtime <- round(as.numeric(end.time-start.time), 2)
-            updateActionButton(session, "search")
+            if (search_res.obj$status == "error") {
+                search_res.report.in <- list(
+                    status = "error",
+                    message = search_res.obj$content,
+                    searchText = searchText,
+                    result_raw = NA,
+                    result_display = NA,
+                    runtime_s = NA
+                )
+            }
+            if (search_res.obj$status == "no_result") {
+                search_res.report.in <- list(
+                    status = "no_result",
+                    message = search_res.obj$content,
+                    searchText = searchText,
+                    result_raw = NA,
+                    result_display = NA,
+                    runtime_s = NA
+                )
+            }
+            if (search_res.obj$status == "exit") {
+                search_res.tbl <- search_res.obj$content
+                search_res.tbl.url <- search_res.tbl %>% 
+                    searchres_youtube("replay-meta.yml")
+                search_res.tbl.display <- searchres_formatter(search_res.tbl.url)
+                end.time <- Sys.time()
+                runtime <- round(as.numeric(end.time-start.time), 2)
+                updateActionButton(session, "search")
 
-            list(
-                hasHit = hasHit,
-                searchText = searchText,
-                result_raw = search_res.tbl,
-                result_display = search_res.tbl.display,
-                runtime_s = runtime
-            )
-        }
+                search_res.report.in <- list(
+                    status = search_res.obj$status,
+                    searchText = searchText,
+                    result_raw = search_res.tbl,
+                    result_display = search_res.tbl.display,
+                    runtime_s = runtime
+                )
+            }
+            search_res.report.in
+            }
     })
 
-    searchres.display <- reactive({search_res()$result_display})
-    output$search_res_report <- reactive({search_res()})
-
     output$display <- renderDT({
-        df <- searchres.display()
+        df <- search_res()$result_display
 
-        df$`Replay url` <- ifelse(
-          grepl("^https?://", df$`Replay url`),
-          paste0("<a href='", df$`Replay url`, "' target='_blank'>", df$`Replay url`, "</a>"),
-          df$`Replay url`
-        )
-        
-        datatable(df, escape = FALSE)
+        if (search_res()$status == "exit") {
+            df$`Replay url` <- ifelse(
+              grepl("^https?://", df$`Replay url`),
+              paste0("<a href='", df$`Replay url`, "' target='_blank'>", df$`Replay url`, "</a>"),
+              df$`Replay url`
+            )
+
+            datatable(df, escape = FALSE)
+        }
     })
     
     output$download_csv <- downloadHandler(
@@ -176,11 +198,12 @@ server <- function(input, output, session) {
     )
 
     output$summary <- renderUI({
-        # summary <- paste0("<br>\nSearch took ", search_res()$runtime_s, " seconds and found ", nrow(search_res()$result_raw), " results.")
-        # if (input$searchText != "") {
-            # HTML(markdownToHTML(text = summary, fragment.only = TRUE))
-        # }
-        HTML(markdownToHTML(as.character(class(search_res()$result_raw))))
+        if (search_res()$status != "exit") {
+            summary <- "No result."
+        } else {
+            summary <- paste0("<br>\nSearch took ", search_res()$runtime_s, " seconds and found ", nrow(search_res()$result_raw), " results.")
+        }
+        HTML(markdownToHTML(text = summary, fragment.only = TRUE))
     })
   
     output$info <- renderUI({
@@ -197,7 +220,6 @@ server <- function(input, output, session) {
 #     session$setInputs(expansion = F)
 #     session$setInputs(case_sensitive = F)
 #     session$setInputs(threshold = 0.2)
-#     stopifnot(output$search_res_report$hasHit)
 # })
 
 shinyApp(ui = ui, server = server)

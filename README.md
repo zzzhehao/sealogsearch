@@ -20,7 +20,7 @@ Selecting the option **Don't search for potential indel-typo** will make the alg
 
 ## Build Your Own App
 
-The source code for the app is under CC-BY-NC-SA licence and available for everyone to use, modify, and re-distribute with appropriate credits, and any kind of commercial use of the code is prohibited. 
+The source code for the app is under GNU Affero General Public License and available for everyone to use, modify, and re-distribute with appropriate credits. If a modified version is used, the complete source code must be provided publicly available under the same licence.
 
 ### Sealog Files
 

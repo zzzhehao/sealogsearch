@@ -6,7 +6,7 @@ A shiny app developed for searching through sealog record produced by ***ROV SuB
 
 ### Get Started
 
-This shiny app searches through selected fields (see section "Search Fields") from *SuBastian*'s sealog file. On the app interface, all settings and functions are located in the sidebar on right side. The simplest work can be done by putting keywords in the search field and hit "Search". The result will be shown on the left side with some general infos, and url links to the YouTube live stream archive if the event was streamed online. You could also download all information along with other sealog fields in a csv file.
+This shiny app searches through selected fields (see section "Search Fields") from *SuBastian*'s sealog file. On the app interface, all settings and functions are located in the sidebar on the left side. The simplest work can be done by putting keywords in the search field and hit "Search". The result will be shown on the right side with some general infos, and url links to the YouTube live stream archive if the event was streamed online. You could also download all information along with other sealog fields in a csv file.
 
 You can set a custom range of cruises and dives in which the keyword will be searched by de-selecting "All cruises" or "All dives". 
 

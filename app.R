@@ -3,6 +3,7 @@ library(shiny)
 library(bslib)
 library(DT)
 library(markdown)
+library(tidyverse)
 
 ## config
 
@@ -118,8 +119,8 @@ server <- function(input, output, session) {
     })
 
     # Do search
-    # search_res <- eventReactive(input$search, {
-    search_res <- reactive({
+    search_res <- eventReactive(input$search, {
+    # search_res <- reactive({ # for test
         start.time <- Sys.time()
         if (length(dive_cruise_conifg()$error) == 0) {
             searchText <- input$searchText
@@ -174,6 +175,7 @@ server <- function(input, output, session) {
             }
     })
 
+    # display search result
     output$display <- renderDT({
         df <- search_res()$result_display
 
@@ -188,6 +190,7 @@ server <- function(input, output, session) {
         }
     })
     
+    # prepare csv for download
     output$download_csv <- downloadHandler(
         filename = function() {
             paste0("sealog_searchresult_", format(now("UTC"), "%Y%m%d%H%M"), ".csv")
@@ -197,6 +200,7 @@ server <- function(input, output, session) {
         }
     )
 
+    # show summary text
     output$summary <- renderUI({
         if (search_res()$status != "exit") {
             summary <- "No result."
@@ -206,6 +210,7 @@ server <- function(input, output, session) {
         HTML(markdownToHTML(text = summary, fragment.only = TRUE))
     })
   
+    # static info display
     output$info <- renderUI({
         info <- "For any question/bugs please contact: [zhehao.hu@hotmail.com](mailto:zhehao.hu@hotmail.com)"            
         HTML(markdownToHTML(text = info, fragment.only = TRUE))

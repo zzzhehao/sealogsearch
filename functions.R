@@ -1,7 +1,11 @@
+suppressMessages({
+    require(tidyverse)
+    require(renv)
+})
+
 init_cache <- function(search.field.custom = NULL) {
-    suppressMessages({
-        require(tidyverse)
-    })
+
+    renv::restore()
     # Run this function to process raw sealog export csv to cached RDS files
     
     dir.create("cache")

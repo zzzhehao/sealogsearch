@@ -6,17 +6,19 @@ A shiny app developed for searching through sealog record produced by ***ROV SuB
 
 ### Get Started
 
-This shiny app searches through selected fields (see section "Search Fields") from *SuBastian*'s sealog file. On the app interface, all settings and functions are located in the sidebar on the left side. The simplest work can be done by putting keywords in the search field and hit "Search". The result will be shown on the right side with some general infos, and url links to the YouTube live stream archive if the event was streamed online. You could also download all information along with other sealog fields in a csv file.
+This shiny app searches through selected fields (see section "Search Fields") from *SuBastian*'s sealog file. Just put keywords in the search field and hit "Search". 
+
+Url links of to the YouTube live stream archive will be generated if the event was streamed online. You could also download all information along with other sealog fields in a csv file.
 
 You can set a custom range of cruises and dives in which the keyword will be searched by de-selecting "All cruises" or "All dives". 
 
 ### Advance Settings
 
-The app uses an self-developed algorithm to enable ambiguous search that could also find keywords with typos. The default setting is a balanced option that has the ability to find keywords with a range of modification without including too many irrelevant results, and is case insensitive.
+The app is capable to search with fuzzy matching. The default setting is a balanced option that has the ability to find keywords with a range of modification without including too many irrelevant results, and is case insensitive.
 
-This might not be always desired when searching for keywords that are included in other words or have similar doppelgangers (e.g. search for "vent" with default settings will hit a lot of entries with the word "event"). In such case, enable the option **Search only for full-word exact match** to find entries that has the exact match of the keyword (the keyword will be wrapped by `\b` in regex in pattern matching). However, this option does not force the search to be case sensitive. To further enforce case sensitive search, select **Case sensitive**.
+This might not be always desired when searching for keywords that are included in other words or have similar doppelgangers (e.g. search for "vent" with default settings will hit a lot of entries with the word "event"). In such case, enable the option **Full-word exact match only** to find entries that has the exact match of the keyword. However, this option does not force the search to be case sensitive. To further enforce case sensitive search, select **Case sensitive**.
 
-Selecting the option **Don't search for potential indel-typo** will make the algorithm less likely to find potential typos that decreases or increases the word length (e.g. search for "Rossellidae" and be able to hit "Roselid" or *vice versa*). **Ambiguous search threshold** controls how much tolerance the algorithm is giving for typos. Lower threshold search the keywords stricter and higher threshold allows larger modification but will also includes more irrelevant results. This option also controls the tolerance while searching for results with indel-typo.
+Selecting the option **No potential indel-typo** will make the algorithm less likely to find potential typos that decreases or increases the word length (e.g. search for "Rossellidae" and be able to hit "Roselid" or *vice versa*). **Ambiguous search threshold** controls how much tolerance the algorithm is giving for typos. Lower threshold search the keywords stricter and higher threshold allows larger modification but will also includes more irrelevant results. This option also controls the tolerance while searching for results with indel-typo.
 
 ## Build Your Own App
 

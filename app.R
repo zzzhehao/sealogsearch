@@ -195,7 +195,7 @@ server <- function(input, output, session) {
                 h3("Welcome to Sealog Search!", style = "color: #2c3e50; font-weight: bold;"),
                 p("Select your cruises and dives on the left, enter a keyword, and hit Search."),
                 div(style = "background-color: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 5px solid #0275d8;",
-                    p(strong("Tip:"), "Set ambiguous search threshold to 0.1 or use full-word exact match when searching for short keyword (e.g. 'vent') to reduce unrelevant results.")
+                    p(strong("Tip:"), "Set ambiguous search threshold to 0.1 or use full-word exact match when searching for short keyword (e.g. 'vent') to reduce irrelevant results.")
                 )
             ))
         }

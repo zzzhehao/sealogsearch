@@ -162,7 +162,7 @@ timecode2link <- function(UTCs, youtube.cl) {
     })
 }
 
-searchSealog <- function(searchTxt, searchRange.cruise="all", searchRange.dive="all", expansion = F, exact = F, ambiguity.threshold = 0.2, case_sensitive = F) {
+searchSealog <- function(data, status, searchTxt, searchRange.cruise="all", searchRange.dive="all", expansion = F, exact = F, ambiguity.threshold = 0.2, case_sensitive = F) {
     suppressMessages({
         require(stringdist)
         require(tidyverse)
@@ -170,7 +170,6 @@ searchSealog <- function(searchTxt, searchRange.cruise="all", searchRange.dive="
     if (searchTxt == "") {
         return(list(status="error", content="Keyword can't be empty"))
     }
-    status <- readRDS("cache/status_report.RDS")
 
     if ("all" %in% searchRange.cruise) {
         searchRange.cruise <- status$cruises
@@ -180,6 +179,8 @@ searchSealog <- function(searchTxt, searchRange.cruise="all", searchRange.dive="
             stop(paste0("Following cruises are not cached for search: \n\n", paste(searchRange.cruise[which(!availabilityCheck)], collapse = "\n")))
         }
     }
+    data <- data %>% filter(cruise_id %in% searchRange.cruise)
+
     if ("all" %in% searchRange.dive) {
         searchRange.dive <- status$dives
     } else {
@@ -188,60 +189,40 @@ searchSealog <- function(searchTxt, searchRange.cruise="all", searchRange.dive="
             stop(paste0("Following dives are not cached for search: \n\n", paste(searchRange.dive[which(!availabilityCheck)], collapse = "\n")))
         }
     }
+    data <- data %>% filter(lowering_id %in% searchRange.dive)
 
-    searchRange.cruise_dive <- status$cruise_dive.tbl %>%
-        filter(cruise %in% searchRange.cruise & dive %in% searchRange.dive)
-    
-    sealog.master <- map_dfr(searchRange.cruise_dive$cache_path, ~readRDS(.x))
-    
-    sealog.master$search.field.defaultSearch <- sealog.master$search.field.defaultSearch %>% 
+    sealog.master <- data
+
+    target_text <- sealog.master$search.field.defaultSearch %>% 
         gsub(";", "", .) 
 
-    if (!case_sensitive) {
-        sealog.master$search.field.defaultSearch <- tolower(sealog.master$search.field.defaultSearch)
-        searchTxt <- tolower(searchTxt)
-    }
-    
-    ambiguity.allowance <- floor(nchar(searchTxt) * ambiguity.threshold)
-    
-    has.match <- function(searchField, searchTxt, ambiguity.allowance, expansion = F, exact = F){
-
-        fullMatch <- ifelse(str_detect(searchField, searchTxt), T, F)
-    
-        if (exact) {
-            return(ifelse(str_detect(searchField, regex(paste0("\\b", searchTxt, "\\b", collapse = ""))), T, F))
-        }
-        if (fullMatch) {return(T)}
+    if (exact) {
+        regex_pattern <- paste0("\\b", searchTxt, "\\b")
+        found_indices <- grep(regex_pattern, target_text, ignore.case = !case_sensitive, perl = TRUE)
+    } else {
+        dist_val <- floor(nchar(searchTxt) * ambiguity.threshold)
         if (expansion) {
-            expansion <- ambiguity.allowance
-        } else if (!expansion) {
-            expansion <- 0
+            found_indices <- agrep(
+                searchTxt, 
+                target_text, 
+                max.distance = dist_val, 
+                ignore.case = !case_sensitive)
+        } else {
+            found_indices <- agrep(
+                searchTxt, 
+                target_text, 
+                max.distance = list(
+                    all = dist_val, 
+                    insertions = 100, 
+                    deletions = 100, 
+                    substitutions = 1
+                ),
+                ignore.case = !case_sensitive
+            )
         }
-        
-        dist.matrix <- map(1:(nchar(searchField)-nchar(searchTxt)+1), \(i) {
-            str_sub_all(
-                searchField, 
-                start = i, 
-                end = i+nchar(searchTxt)-1+expansion)
-        }) %>% 
-            unlist() %>% 
-            stringdistmatrix(searchTxt) %>% 
-            as.vector()
-    
-        ambiguitymatch <- dist.matrix <= ambiguity.allowance + expansion
-        return(any(ambiguitymatch))
     }
-    
-    match.res <- map(1:nrow(sealog.master), \(i){
-        searchField <- sealog.master$search.field.defaultSearch[i]
-        ifelse(
-            nchar(searchField) <= nchar(searchTxt), 
-            stringdistmatrix(searchField, searchTxt) < ambiguity.allowance, 
-            has.match(searchField, searchTxt, ambiguity.allowance, expansion, exact)
-        )
-    }) %>% unlist()
 
-    sealog.match <- sealog.master[which(match.res),]
+    sealog.match <- sealog.master[found_indices, ]
     
     if (nrow(sealog.match) == 0) {
         return(list(status="no_result", content="No result."))
@@ -250,7 +231,7 @@ searchSealog <- function(searchTxt, searchRange.cruise="all", searchRange.dive="
     return(list(status="exit", content=sealog.match))
 }
 
-searchres_youtube <- function(tbl, replay_meta_path) {
+searchres_youtube <- function(tbl, youtube_meta) {
     suppressMessages({
         require(stringdist)
         require(tidyverse)
@@ -259,7 +240,7 @@ searchres_youtube <- function(tbl, replay_meta_path) {
         tbl, 
         timecode2link(
             tbl$ts %>% gsub("T", " ", .) %>% gsub("\\.[0-9]{3}Z$", "", .) %>% as.POSIXct(tz = "UTC"), 
-            youtube_yaml(replay_meta_path)
+            youtube_meta
         )
     )
     return(tbl.youtube)
